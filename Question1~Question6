@@ -1,0 +1,27 @@
+1. What is ​Inheritance​? Try to explain in Mandarin.
+繼承是指子類別從父類別獲取屬性跟方法的過程，繼承有幾個好處，第一個是程式的可用性提升，當子類別繼承父類別時，可以不用重寫相同程式碼，可以節省間，第二個如果有許多程式碼是相同的，也可以透過繼承，讓程式可讀性提升。
+2. How to ​split​ a string in Android? Explain your understanding, and even better to attach some sample code
+定義出delimiter，呼叫split函數來完成分隔字串，將字串分割成數個token，並產出符合的list結果。
+fun main() {
+    val citys = "Taiwan, Japan, America, Korea"
+    val splitTest = citys.split(",")
+    println(splitTest)
+}
+.3. What kind of ​key-value​ pair collection we use in Android? Attach a sample code that usefor-loop to print each key-value pair.
+Map，包含像是AbstractMap、ArrayMap、EnumMap、 HashMap等等。
+fun main() {
+    val citys = mapOf("Taiwan" to "Taipei", "Japan" to "Tokyo", "America" to "Washington",
+        "Korea" to "Seoul")
+
+    for (i in citys){
+        println("${i.value} is the capital of ${i.key}.")
+    }
+}
+4. What’s the ​difference​ between ArrayList and LinkedList? Try to explain in Mandarin.
+1.收尋：ArrayList收尋比較快，透過get(index)可以取得數值，而LinkedList要取得數值必須從開始的節點一路搜尋到要需要的值的位址，需要花比較多時間。
+2.新增及刪除：LinkedList速度較快，因為LinkedList是透過節點存取，僅需要將節點指向新增或刪除的資料即可，而ArrayList需要將所有資料移動，所以會比較花時間。
+如果需要頻繁新增刪除資料使用LinkedList，如果需要頻繁收尋資料則使用ArrayList。
+5. What are ​Value Type​ variables? List out the Value Type variables you know.
+Value Type variables是真實的值，儲存的是實體的值，也就是記憶體位址。每個Value Type variables各對應一組記憶體位址存放該變數的值。Value Type variables 有以下幾種Byte、Short、Int、Long，Char，Booleans、String。
+6. What’s the ​maximum​ value of ​Int​? If you want to represent integers larger than the limit,what should you do instead of using int variables?
+The ​maximum​ value of ​Int is -2,147,483,648~2,147,483,647 (-2的31次方~2的31次方-1). 可以在數字後面加L，或是宣告變數為Long，才不會發生溢位的情形。
